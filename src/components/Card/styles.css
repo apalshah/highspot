@@ -1,0 +1,41 @@
+.card-custom{
+  height: 450px;
+  background-color:#e9ebee;
+  margin: .5rem;
+  box-shadow: 0 2px 4px 0 hsla(30,8.3%,9.4%,.1);
+  overflow: hidden;
+  min-width: 350px;
+}
+
+@media  (max-width: 1200px) and (min-width: 801px){
+  .card-custom{
+    min-width: 300px;
+  }
+}
+
+@media  (max-width: 800px) and (min-width: 601px){
+  .card-custom{
+    max-width: 400px;
+  }
+}
+
+.card-custom:hover{
+  transform: scale(1.02);
+  transition: transform .15s cubic-bezier(.4,0,.2,1);
+}
+.card .card-img{
+  height: 320px;
+  background-position: center top;
+  background-size: 100% auto;
+}
+.card .card-body{
+  text-align: left;
+}
+.card .text{
+  text-align: left;
+}
+.card .truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
