@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `yarn`
 
 ## How to run react app?
-### `yarn start`
+### `yarn start` (If chrome tab doesn't open then use: http://localhost:3000/)
 
 # Project Notes
 
