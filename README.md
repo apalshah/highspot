@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How to run react app?
 ### `yarn start`
 
-*****************Project Notes***********************
+# Project Notes
 
 ## 1. Code Structure
 Seperation of concerns, reusability & Encapsulization are most important Software Engineering principles. This project is divided in apis, Containers & Components.
