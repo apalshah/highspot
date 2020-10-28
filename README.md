@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. node v10.22.1
 2. yarn 1.22.5
 
-#How to install dependecies?
+## How to install dependecies?
 ### `yarn`
 
-How to run react app?
+## How to run react app?
 ### `yarn start`
 
 *****************Project Notes***********************
@@ -20,10 +20,15 @@ Seperation of concerns, reusability & Encapsulization are most important Softwar
 
 ## 2. External libraries/components used
 - lodash -> to use debounce, to improve performance
-- InfiniteScroll component to allow load on scroll for cards
+- InfiniteScroll component -> to allow load on scroll for cards
 - Bootstrap -> for grid layout
 
-## 3. Future Implementation/Improvements
+## 3. Implementation Details
+- CardGrid container communicates with cards.api.js to retrieve cards info & uses Cards component to render them
+- CardGrid container uses InfiniteScroll component to detect if user is near the end of the page, if so then another request is made to retrieve data until no more data is found
+- Search bar allows users to filter by name. CardGrid container uses `debounce` to delay making more requests, improving performance of search
+
+## 4. Future Implementation/Improvements
 A. Testing
 - Considering time limitation & react is something new for me, this project doesn't have unit/automated compoonent tests
 - However, if I had more time, I would like to test search bar & cards rendering (what if no cards, what if too many cards, is new request made when user is closed to the end of the window etc.) components/containers
