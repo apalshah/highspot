@@ -27,7 +27,8 @@ export default class CardGridCtn extends React.Component {
             isLoaded: false,
             hasMore: true,
             page: 1,
-            keywords: ""
+            keywords: "",
+            gridContainerClasses: ""
         };
         //cards api to communicate with /cards api
         this.cardsAPI = new CardsAPI();
@@ -39,6 +40,7 @@ export default class CardGridCtn extends React.Component {
         //function to GET cards
         this.fetchData = this.fetchData.bind(this);
         this.handleKeywordsChange = this.handleKeywordsChange.bind(this);
+        this.setGridContainerClasses = this.setGridContainerClasses.bind(this);
     }
 
     //as users type in the search bar this function gets called
@@ -57,6 +59,18 @@ export default class CardGridCtn extends React.Component {
         }, SEARCH_DEBOUNCE_DELAY);
       }
       this.debouncedSearch();
+    }
+
+    setGridContainerClasses(){
+      let classStr = "row mt-5";
+      if(window.innerWidth > 800 && this.state.cards.length % 3 !== 0){
+        classStr += " justify-content-left";
+      }else{
+        classStr += " justify-content-center";
+      }
+      this.setState({
+        gridContainerClasses: classStr
+      });
     }
 
     fetchData(resetPagination){
@@ -116,6 +130,7 @@ export default class CardGridCtn extends React.Component {
                 cards: this.state.cards.concat(result.cards),
                 page: this.state.page+1
               });
+              this.setGridContainerClasses();
             }
           },
           // Note: it's important to handle errors here
@@ -137,6 +152,7 @@ export default class CardGridCtn extends React.Component {
 
     renderCard(card, key){
         // console.log("card",card);
+        window.addEventListener("resize",this.setGridContainerClasses);
         return (
                 this.state.isLoaded && <CardCmp key={card.id} 
                                                     name={card.name}
@@ -179,7 +195,7 @@ export default class CardGridCtn extends React.Component {
                   </p>
                 }
               >
-                <div className="row mt-5 justify-content-center">
+                <div className={this.state.gridContainerClasses}>
                   {/* Render cards as user scrolls */}
                   {this.state.isLoaded && this.state.cards.map((card, i) => this.renderCard(card))}
                 </div>

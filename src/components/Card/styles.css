@@ -4,21 +4,29 @@
   margin: .5rem;
   box-shadow: 0 2px 4px 0 hsla(30,8.3%,9.4%,.1);
   overflow: hidden;
-  min-width: 350px;
-  max-width: 400px;
+  min-width: 340px;
+  max-width: 340px;
 }
 
-@media  (max-width: 1200px) and (min-width: 801px){
+@media (min-width: 1201px){
   .card-custom{
-    min-width: 300px;
+    min-width: 360px;
+    max-width: 360px;
   }
 }
 
-@media  (max-width: 800px) and (min-width: 601px){
+@media  (max-width: 1200px) and (min-width: 991px){
+  .card-custom{
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+/* @media  (max-width: 800px) and (min-width: 601px){
   .card-custom{
     max-width: 400px;
   }
-}
+} */
 
 .card-custom:hover{
   transform: scale(1.02);
