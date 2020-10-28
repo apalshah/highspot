@@ -5,6 +5,7 @@
   box-shadow: 0 2px 4px 0 hsla(30,8.3%,9.4%,.1);
   overflow: hidden;
   min-width: 350px;
+  max-width: 400px;
 }
 
 @media  (max-width: 1200px) and (min-width: 801px){

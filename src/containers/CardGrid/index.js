@@ -9,6 +9,7 @@ import './styles.css';
 
 //constant values that won't change
 const PAGESIZE = 20;
+const SEARCH_DEBOUNCE_DELAY = 1000;
 
 export default class CardGridCtn extends React.Component {
 
@@ -53,7 +54,7 @@ export default class CardGridCtn extends React.Component {
         this.debouncedSearch = debounce(() => {
           console.log(this.state.keywords);
           this.fetchData(true);
-        }, 1000);
+        }, SEARCH_DEBOUNCE_DELAY);
       }
       this.debouncedSearch();
     }
@@ -147,6 +148,7 @@ export default class CardGridCtn extends React.Component {
             
         );
     }
+
 
     render() {
       return (

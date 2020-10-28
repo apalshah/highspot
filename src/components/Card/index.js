@@ -1,6 +1,11 @@
 import React from 'react';
 import './styles.css';
 
+/* 
+Component Params
+`name`:string name of the card
+`name`: name of the card
+*/
 export default class CardCmp extends React.Component {
 
     constructor(props){
